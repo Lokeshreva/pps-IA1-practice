@@ -1,14 +1,4 @@
- gcc-g p1final.c
- gdb a.out
-GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
-Copyright (C) 2018 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, tls.
-This GDB was configured as "x86_64-linux-gnu".
-Type "show configuration" for configuration details.
- 
- gcc -g p1final.c
+ gcc -g p1original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -26,28 +16,25 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x722: file p1final.c, line 3.
+Breakpoint 1 at 0x7fc: file p1original.c, line 16.
 (gdb) r
-Starting program: /home/runner/pps-test1-Mohammed075-5/a.out 
+Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p1final.c:3
-3   {
+Breakpoint 1, main () at p1original.c:16
+16  {
 (gdb) n
-5     printf("add two numbers");
+18  input(&a,&b);
 (gdb) n
-6     scanf("%d %d",&a,&b);
-(gdb) n
-add two numbers
-4
+Enter a Number:
 5
-7     c=a+b;
+5
+19  add(a,b,&sum);
 (gdb) n
-8     printf("sum of a+b is %d",c);
+20  output(a,b,sum);
 (gdb) n
-9     return 0;
+21  return 0;
 (gdb) c
 Continuing.
-sum of a+b is 9[Inferior 1 (process 104) exited normally]
+sum of 5 and 5 is 10[Inferior 1 (process 104) exited normally]
 (gdb) 
-
