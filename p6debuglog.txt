@@ -1,9 +1,4 @@
-clang version 7.0.0-3~ubuntu0.18.04.1 (tags/RELEASE_700/final)
-gcc -g p6final.c
- ./a.out
-enter the value of n
-15  
-sum is 120 
+ gcc -g p6original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -21,22 +16,27 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x818: file p6final.c, line 25.
-(gdb) r
-Starting program: /home/runner/pps-test1-Mohammed075-6/a.out 
+Breakpoint 1 at 0x952: file p6original.c, line 58.
+(gdb) r 
+Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6final.c:25
-25      n=input();
+Breakpoint 1, main () at p6original.c:58
+58  {
 (gdb) n
-enter the value of n
-15  
-26      sum=add(n);
+61  input_two_string(a,b);
 (gdb) n
-27      output(sum);
+enter any word:
+Reva
+enter any word:
+rea
+62  ans=cmp(a,b);
 (gdb) n
-28      return 0;
+63  output(a,b,ans);
+(gdb) n
+rea is greater than Reva
+64  return 0;
 (gdb) c
 Continuing.
-sum is 120[Inferior 1 (process 828) exited normally]
+[Inferior 1 (process 676) exited normally]
 (gdb) 
