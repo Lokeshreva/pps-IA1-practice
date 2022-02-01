@@ -1,40 +1,36 @@
-#include <stdio.h>
-int input()
+#include<stdio.h>
+typedef struct complex
 {
-    int n;
-    printf("Enter number\n");
-    scanf("%d",&n);
-    return n;
-}
+float real;
+float imaginary;
+}complex;
 
-int aray(int n,int a[10])
+complex input()
 {
-    int i;
-    for(i=0;i<n;i++)
-    {
-        printf("Enter the elements:\n");
-        scanf("%d",&a[i]);
-    }
+complex c;
+printf("Enter the real part:");
+scanf("%f",&c.real);
+printf("enter the imaginary part:");
+scanf("%f",&c.imaginary);
+return c;
 }
-int add(int n,int a[10])
+complex add(complex a, complex b)
 {
-    int sum=0,i;
-    for(i=0;i<n;i++)
-    {
-        sum = sum+a[i];
-    }
-    return sum;
+complex sum;
+sum.real=a.real+b.real;
+sum.imaginary=a.imaginary+b.imaginary;
+return sum;
 }
-int output(int sum)
+void output(complex sum)
 {
-    printf("sum is %d",sum);
+printf("the sum is %0.1f+%0.1f",sum.real,sum.imaginary);
 }
 int main()
 {
-    int n,sum,a[10];
-    n = input();
-    aray(n,a);
-    sum = add(n,a);
-    output(sum);
-    return 0;
-} 
+complex c1,c2,sum;
+c1=input();
+c2=input();
+sum=add(c1,c2);
+output(sum);
+return 0;
+}

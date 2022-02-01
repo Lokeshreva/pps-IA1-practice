@@ -1,19 +1,4 @@
-clang version 7.0.0-3~ubuntu0.18.04.1 (tags/RELEASE_700/final)
-gcc -g p7final.c
- ./a.out
-enter n
-5
-enter array number
-2
-enter array number
-3
-enter array number
-4
-enter array number
-5
-enter array number
-6
-sum is 20 
+gcc -g p7original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -30,37 +15,27 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
-(gdb) b main 
-Breakpoint 1 at 0x88a: file p7final.c, line 32.
+(gdb) b main
+Breakpoint 1 at 0x828: file p7original.c, line 31.
 (gdb) r
-Starting program: /home/runner/pps-test1-Mohammed075-6/a.out 
+Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p7final.c:32
-32  {
+Breakpoint 1, main () at p7original.c:31
+31  c1=input();
 (gdb) n
-34    n=input();
+Enter the real part:3
+enter the imaginary part:5
+32  c2=input();
 (gdb) n
-enter n
-5
-35    aray(n,a);
+Enter the real part:4
+enter the imaginary part:6
+33  sum=add(c1,c2);
 (gdb) n
-enter array number
-2
-enter array number
-3
-enter array number
-4
-enter array number
-5
-enter array number
-6
-36    sum=add(n,a);
+34  output(sum);
 (gdb) n
-37    output(sum);
-(gdb) n
-38    return 0;
+35  return 0;
 (gdb) c
 Continuing.
-sum is 20[Inferior 1 (process 290) exited normally]
+the sum is 7.0+11.0[Inferior 1 (process 833) exited normally]
 (gdb) 
