@@ -1,33 +1,35 @@
 #include<stdio.h>
-void input(int *a, int *b,int *c)
+float input()
 {
-  printf("enter the value\n");
-  scanf("%d %d %d",a,b,c);
+float n;
+printf("enter a number=\n");
+scanf("%f",&n);
+return n;
 }
-void cmp(int a,int b,int c,int *large)
+float my_sqrt(float n)
 {
-   if(a>b && a>c)
-  {
-   *large=a;
-  }
-  else if(b>c && b>a)
- {
-   *large=b;
- } 
- else
- {
-   *large=c;
- }
+float sqrt_result;
+sqrt_result=n/2;
+float root=0;
+while(sqrt_result!=root)
+{
+root=sqrt_result;
+sqrt_result=(n/root+root)/2;
 }
-void output(int a,int b,int c,int large)
+return sqrt_result;
+}
+void output(float n, float sqrt_result)
 {
-  printf("large value %d",large);
+int j,k;
+j=n;
+k=sqrt_result;
+printf("square root of %d=%d\n",j,k);
 }
 int main()
 {
-int a,b,c,large;
-input(&a,&b,&c);
-cmp(a,b,c,&large);
-output(a,b,c,large);
+float n,sqrt_result;
+n=input();
+sqrt_result=my_sqrt(n);
+output(n,sqrt_result);
 return 0;
 } 
