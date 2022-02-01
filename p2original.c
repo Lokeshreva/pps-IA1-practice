@@ -1,30 +1,31 @@
-#include <stdio.h>
-int input ()
+#include<stdio.h>
+int input()
 {
-  int a;
-  printf("Enter Value :");
-  scanf("%d",&a);
-  return a;
+int a;
+printf("enter number:\n");
+scanf("%d",&a);
+return a;
 }
-int add(int a,int b)
-
+int cmp(int a,int b,int c)
 {
-  int sum;
-  sum=a+b;
-  return sum;
+if((a>b)&&(a>c))
+return a;
+else if((b>a)&&(b>c))
+return b;
+else
+return c;
 }
-void output(int a,int b,int sum)
-
+int output(int big)
 {
-  printf("sum of two numbers is %d+%d=%d",a,b,sum);
+printf("bigger number is %d",big);
 }
 int main()
 {
-  int a,b,result;
-  a=input();
-  b=input();
-  result=add(a,b);
-  output(a,b,result);
-  return 0;
-
-  } 
+int x,y,z,big;
+x=input();
+y=input();
+z=input();
+big=cmp(x,y,z);
+output(big);
+return 0;
+} 
