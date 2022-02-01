@@ -1,16 +1,4 @@
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>.
-Find the GDB manual and other documentation resources online at:
-<http://www.gnu.org/software/gdb/documentation/>.
-For help, type "help".
- gcc -g p4final.c;./a.out
-enter value
-10
-enter value
-20
-enter value
-30
-biggest number is 30
+gcc -g p4original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -28,30 +16,36 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x826: file p4final.c, line 25.
+Breakpoint 1 at 0x88a: file p4original.c, line 32.
 (gdb) r
-Starting program: /home/runner/pps-test1-Mohammed075-6/a.out 
+Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4final.c:25
-25    x=input();x=
+Breakpoint 1, main () at p4original.c:32
+32  {
 (gdb) n
-enter value
-10
-enter value
-20
-26    y=input();y=20;
+34  n = input();
 (gdb) n
-27    z=input();z=30;
+Enter number
+5
+35  aray(n,a);
 (gdb) n
-enter value
-30
-28    big=cmp(x,y,z);;
+Enter the elements:
+2
+Enter the elements:
+3
+Enter the elements:
+4
+Enter the elements:
+5
+Enter the elements:
+6
+36  sum = add(n,a);
 (gdb) n
-29    output(big);
+37  output(sum);
 (gdb) n
-biggest number is 30
-30  }(gdb) c
+38  return 0;
+(gdb) c
 Continuing.
-[Inferior 1 (process 609) exited normally]
+sum is 20[Inferior 1 (process 390) exited normally]
 (gdb) 
